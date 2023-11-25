@@ -1,0 +1,28 @@
+<div class="col-lg-4 col-md-5">
+  <div class="blog__sidebar">
+    <div class="blog__sidebar__search">
+      <form id="blogSearchForm" onsubmit="onSubmit(event)">
+        <input type="text" name="search" placeholder="Search..." />
+        <button><span class="icon_search"></span></button>
+      </form>
+    </div>
+    <div class="blog__sidebar__item">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="javascript:void(0);" onclick="applyFilter({ category: '' });">All</a></li>
+        {{#each categories}}
+        <li><a href="javascript:void(0);" onclick="applyFilter({ category: '{{name}}' });">{{name}} ({{blogCount}})</a></li>
+        {{/each}}
+      </ul>
+    </div>
+
+    <div class="blog__sidebar__item">
+      <h4>Search By Tags</h4>
+      <div class="blog__sidebar__item__tags">
+        {{#each tags}}
+        <a href="javascript:void(0);" onclick="applyFilter({ tag: '{{name}}' });">{{name}}</a>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
