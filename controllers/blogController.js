@@ -70,6 +70,7 @@ controller.showDetails = async (req, res) => {
             { model: models.Category },
             { model: models.User },
             { model: models.Tag },
+            { model: models.Comment},
         ]
     })
     console.log(res.locals.blog);
